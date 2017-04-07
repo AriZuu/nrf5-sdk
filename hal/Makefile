@@ -113,4 +113,4 @@ extract: ../sdk/components/sdk_validation.h
 
 ../sdk/components/sdk_validation.h:
 	mkdir -p ../sdk
-	(cd ../sdk; unzip -q ../../cmsis-ports/distfiles/nRF5_SDK_12.2.0_f012efa.zip)
+	(cd ../sdk; unzip -q ../../distfiles/nRF5_SDK_12.2.0_f012efa.zip)
