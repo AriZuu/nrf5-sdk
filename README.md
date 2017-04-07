@@ -16,10 +16,10 @@ knobs (Makefile variables) can be set in project Makefile:
 
 ```
 NRF5_SOFTDEVICE	= s130
+NRF5_DEFINES  	= NRF51 NRF51822 BOARD_PCA10001 BLE_STACK_SUPPORT_REQD NRF_SD_BLE_API_VERSION=2
 NRF5_DRIVERS	= common clock gpiote
 NRF5_BLE	= common ble_advertising ble_services/ble_bas ble_services/ble_hrs
 NRF5_LIBRARIES	= timer fstorage experimental_section_vars sensorsim button fds scheduler bsp
-NRF5_DEFINES  	= NRF51 NRF51822 BOARD_PCA10001 BLE_STACK_SUPPORT_REQD NRF_SD_BLE_API_VERSION=2
 ```
 
 Knobs will automatically set correct include path for project.
