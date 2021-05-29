@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2017, Ari Suutari <ari@stonepile.fi>.
+ * Copyright (c) 2016-2021, Ari Suutari <ari@stonepile.fi>.
  * All rights reserved. 
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -60,30 +60,17 @@ typedef struct {
  */
 STATIC_ASSERT(sizeof(Timer) <= sizeof(app_timer_t));
 
-static app_timer_evt_schedule_func_t eventScheduleFunc;
-
 static void timerCallback(POSTIMER_t timer, void* arg)
 {
   Timer* t = (Timer*)arg;
-
-  if (eventScheduleFunc != NULL) {
- 
-    uint32_t err = eventScheduleFunc(t->handler, t->arg);
-    APP_ERROR_CHECK(err);
-  }
-  else
-    t->handler(t->arg);
+  t->handler(t->arg);
 }
 
 /*
  * Initialize app timer system.
  */
-uint32_t app_timer_init(uint32_t prescaler,
-                        uint8_t  queueSize,
-                        void*    buffer,
-                        app_timer_evt_schedule_func_t scheduleFunc)
+uint32_t app_timer_init()
 {
-  eventScheduleFunc = scheduleFunc;
   return NRF_SUCCESS;
 }
 
