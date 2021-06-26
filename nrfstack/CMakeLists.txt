@@ -126,6 +126,7 @@ target_include_directories(nrfstack
   ${LIBS}/timer
   ${LIBS}/mutex
   ${LIBS}/pwr_mgmt
+  ${LIBS}/bootloader
   ${WORK}/components/softdevice/${NRF5_SOFTDEVICE}/headers
   ${WORK}/components/softdevice/${NRF5_SOFTDEVICE}/headers/nrf52
   ${WORK}/components/softdevice/common
