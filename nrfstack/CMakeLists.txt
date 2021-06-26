@@ -164,4 +164,4 @@ target_include_directories(nrfstack
 endif()
 
 target_compile_options(nrfstack PUBLIC -Wno-expansion-to-defined
-  PRIVATE -Wno-aggregate-return -Wno-bad-function-cast)
+  PRIVATE -Wno-missing-declarations -Wno-unused-variable -Wno-missing-prototypes -Wno-unused-function -Wno-aggregate-return -Wno-bad-function-cast)
