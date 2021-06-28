@@ -48,8 +48,6 @@ set(LOCAL_LOG_SOURCE
     src/log_console.c
 )
 set(SDK_LOG_SOURCE
-    ${LIBS}/memobj/nrf_memobj.c
-    ${LIBS}/balloc/nrf_balloc.c
     ${LIBS}/ringbuf/nrf_ringbuf.c
 
     ${LIBS}/log/src/nrf_log_backend_rtt.c
@@ -78,6 +76,9 @@ set(SDK_SOURCE ${SDK_LOG_SOURCE}
     ${LIBS}/atomic/nrf_atomic.c
     ${LIBS}/pwr_mgmt/nrf_pwr_mgmt.c
     ${LIBS}/atomic_flags/nrf_atflags.c
+    ${LIBS}/memobj/nrf_memobj.c
+    ${LIBS}/balloc/nrf_balloc.c
+    ${LIBS}/queue/nrf_queue.c
 
     ${LIBS}/strerror/nrf_strerror.c
     ${LIBS}/experimental_section_vars/nrf_section_iter.c
@@ -86,6 +87,7 @@ set(SDK_SOURCE ${SDK_LOG_SOURCE}
     ${WORK}/components/softdevice/common/nrf_sdh_ble.c
     ${WORK}/components/softdevice/common/nrf_sdh_soc.c
     ${WORK}/components/ble/ble_db_discovery/ble_db_discovery.c
+    ${WORK}/components/ble/nrf_ble_gq/nrf_ble_gq.c
 
     ${BLE}/common/ble_advdata.c
     ${BLE}/common/ble_srv_common.c
@@ -123,6 +125,9 @@ target_include_directories(nrfstack
   PUBLIC include
   ${LIBS}/util
   ${LIBS}/strerror
+  ${LIBS}/memobj
+  ${LIBS}/balloc
+  ${LIBS}/queue
   ${LIBS}/timer
   ${LIBS}/mutex
   ${LIBS}/pwr_mgmt
@@ -132,6 +137,7 @@ target_include_directories(nrfstack
   ${WORK}/components/softdevice/common
   ${WORK}/components/ble/common
   ${WORK}/components/ble/ble_db_discovery
+  ${WORK}/components/ble/nrf_ble_gq
   ${LIBS}/experimental_section_vars
   ${LIBS}/atomic
   ${LIBS}/atomic_flags
@@ -156,8 +162,6 @@ else()
 
 target_include_directories(nrfstack
   PUBLIC ${LIBS}/log
-  ${LIBS}/memobj
-  ${LIBS}/balloc
   ${LIBS}/ringbuf
   ${EXT}/fprintf
   ${LIBS}/log/src)
