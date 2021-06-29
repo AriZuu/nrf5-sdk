@@ -95,6 +95,7 @@ set(SDK_SOURCE ${SDK_LOG_SOURCE}
     ${BLE}/common/ble_conn_state.c
 
     ${BLE}/ble_advertising/ble_advertising.c
+    ${BLE}/nrf_ble_scan/nrf_ble_scan.c
     ${BLE}/nrf_ble_gatt/nrf_ble_gatt.c
     ${BLE}/ble_link_ctx_manager/ble_link_ctx_manager.c
 
@@ -145,6 +146,7 @@ target_include_directories(nrfstack
   ${BLE}/nrf_ble_gatt
   ${BLE}/ble_link_ctx_manager
   ${BLE}/ble_advertising
+  ${BLE}/nrf_ble_scan
   ${BLE_SERVICE_INCLUDE}
   PRIVATE ${DIR_CONFIG})
 
