@@ -79,6 +79,7 @@ void logPrintf(int level, const char* fmt, ...);
 
 #define NRF_LOG_INST_DEBUG(...)
 #define NRF_LOG_INST_INFO(...)
+#define NRF_LOG_INST_WARNING(...)
 
 #ifdef __cplusplus
 }
