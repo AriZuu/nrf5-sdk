@@ -1,11 +1,11 @@
 /*
  * Copyright (c) 2021, Ari Suutari <ari@stonepile.fi>.
- * All rights reserved. 
- * 
+ * All rights reserved.
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
- * 
+ *
  *  1. Redistributions of source code must retain the above copyright
  *     notice, this list of conditions and the following disclaimer.
  *  2. Redistributions in binary form must reproduce the above copyright
@@ -13,8 +13,8 @@
  *     documentation and/or other materials provided with the distribution.
  *  3. The name of the author may not be used to endorse or promote
  *     products derived from this software without specific prior written
- *     permission. 
- * 
+ *     permission.
+ *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
  * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -41,7 +41,7 @@ const char* thinlogSeverityNames[] = {
 
 void logPrintf(int level, const char* fmt, ...)
 {
-  char buf[80];
+  char buf[132];
   va_list ap;
 
   if (SCB->ICSR & SCB_ICSR_VECTACTIVE_Msk)
